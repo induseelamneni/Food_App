@@ -19,10 +19,11 @@ const FoodDeliveryApp = () =>  {
 
     const fetchData = async () => {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.5164593&lng=78.4176358&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING") //&page_type=DESKTOP_WEB_LISTING
-        // https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.5164593&lng=78.4176358&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
-        //https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.385044&lng=78.486671&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
+        // https://corsproxy.io/?
         const jsonData =await data.json()
-        const parsedData = jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+        console.log(jsonData,"js")
+        const parsedData = jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+         console.log(parsedData,"in")
 
         setListOfRestarents2(parsedData)
         setFilteredRes(parsedData)
