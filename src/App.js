@@ -33,7 +33,6 @@ const AppLayout = () => {
 
     },[])
 
-    console.log(user)
     return (
         <Provider   store={appStore}>
         <UserContext.Provider value ={{loggedInUser: user, setUser}}>

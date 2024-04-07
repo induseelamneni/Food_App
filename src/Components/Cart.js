@@ -3,12 +3,12 @@ import ItemList from "./ItemList"
 import { clearCart } from "../utils/cartSlice"
 const Cart = () => {
     const cartItem = useSelector((store) => store.cart.items)
-    console.log(cartItem,"insuCart")
+    
     const dispatch = useDispatch()
 
     const clearCartBtn = () => {
         dispatch(clearCart())
-        console.log("clear")
+       
     }
     return(
         <div className="text-center m-4 p-4">
