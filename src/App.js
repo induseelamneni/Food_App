@@ -1,24 +1,17 @@
 import './App.css';
 import {Provider} from "react-redux"
-import store from "./utils/appStore";
+
 
 import React, { useEffect, useState } from 'react'
 import {lazy,Suspense} from "react"
-// import ReactDOM from 'react-dom/client'
 import FoodDeliveryApp from './Components/FoodDeliveryApp.js'
-// import AboutUs from './Components/AboutUs.js'
 import NavBar from "./Components/Navbar.js"
 import Cart from './Components/Cart'
-
 import Contact from './Components/Contact'
 import ErrorComponent from './Components/ErrorComponent'
-
 import { createBrowserRouter,Outlet,RouterProvider } from 'react-router-dom'
 import RestarentMenu from './Components/RestarentMenu'
 import UserContext from './utils/UserContext'
-import { BrowserRouter } from 'react-router-dom';
-// import Grocery from './Components/Grocery'
-
 import appStore from './utils/appStore'
 
 const Grocery = lazy(() => import('./Components/Grocery'))
@@ -92,19 +85,8 @@ function App() {
   return (
    
      <div className="App">
-
       <RouterProvider  router={appRouter} />
-  
      </div>
-   
-
-    
-    // <Provider store = {store}>
-    // <div className="App">
-    //   <NavBar />
-     
-    // </div>
-    // </Provider>
   );
 }
 
