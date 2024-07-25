@@ -3,7 +3,7 @@ import { CLOUDANARYIMAGE } from "../utils/constants"
 import { addItem } from "../utils/cartSlice"
 
 const ItemList = ({items,dummy}) => {
-
+     console.log(items,"initem")
     const dispatch = useDispatch()
     const addItemToTheCart = (item) => {
         dispatch(addItem(item))

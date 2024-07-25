@@ -15,13 +15,17 @@ const RestarentMenu = () => {
 
     let resInfo = useRestarantMenu(resId)
     if (resInfo === null) return  <Shimmer/> ;
+    console.log(resInfo?.cards[0]?.card?.card?.text,"in")
 
-    const {name ,cuisines,costForTwoMessage,cloudinaryImageId,avgRating} = resInfo?.cards[0]?.card?.card?.info
+    const {name ,cuisines,costForTwoMessage,cloudinaryImageId,avgRating} = resInfo?.cards[2]?.card?.card?.info
 
-    const categories = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((e) => e.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
-  
+   console.log(resInfo,"in")
+
+    const categories = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((e) => e.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
+    // console.log(categories)
    
     return (
+       
         <div>
             <div className="container mx-auto w-96">
          <h1 className="mb-2 font-serif">{name}</h1>
@@ -33,7 +37,6 @@ const RestarentMenu = () => {
             <RestarentCategory data={category?.card?.card} showItems = {index === showIndex ? true : false} setShowIndex={() => setShowIndex(index)} key={category?.card?.card.id}/>
          ))}
     </div>
-    
        
     )
 

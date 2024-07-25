@@ -3,6 +3,7 @@ import { API } from "../utils/constants"
 
 const useRestarantMenu = (resId) =>{
     const [resInfo, setResInfo] = useState(null)
+    
 
     useEffect(()=>{
         fetchApi()
